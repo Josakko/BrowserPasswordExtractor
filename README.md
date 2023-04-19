@@ -16,7 +16,7 @@ Virus for extracting saved passwords from browsers like chrome, chromium, brave.
     AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Login Data
 
 3. Use nc or some other reversed shell to upload the virus to the victims machine
-4. Download http server from my key loegger rep witch you can find [here](https://github.com/Josakko/KeyLogger)
+4. Download http server from my key loegger repo witch you can find [here](https://github.com/Josakko/KeyLogger)
 5. Make sure that server is running while virus is to retrive all passwords from victims maching and also dont forget to replace data from `todo.txt` whit correct one
 
 ## Need Help?
