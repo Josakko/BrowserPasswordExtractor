@@ -10,7 +10,7 @@ Virus for extracting saved passwords from browsers like chrome, chromium, brave.
     AppData/Local/Google/Chrome/User Data/Local State
     AppData/Local/Google/Chrome/User Data/Default/Login Data 
 
-### Brave 
+#### Brave 
 
     AppData/Local/BraveSoftware/Brave-Browser/User Data/Local State
     AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Login Data
