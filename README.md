@@ -35,7 +35,7 @@ Virus for extracting saved passwords from chromium based browsers
 5. Make sure that server is running while virus is to retrive all passwords from victims maching and also dont forget to replace data from `todo.txt` whit correct one
 
 ## Need Help?
-If you need help contact me on my discord server.
+If you need help contact me on my [discord server](https://discord.gg/xgET5epJE6).
 
 ## Contributors
 Big thanks to all of the amazing people (only me) who have helped by contributing to this project!
