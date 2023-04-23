@@ -30,7 +30,7 @@ Virus for extracting saved passwords from chromium based browsers
     AppData/Roaming/Opera Software/Opera Stable/Local State
     AppData/Roaming/Opera Software/Opera Stable/Login Data
 
-## Opera GX
+#### Opera GX
 
     AppData\Roaming\Opera Software\Opera GX Stable\Local State
     AppData\Roaming\Opera Software\Opera GX Stable\Login Data
