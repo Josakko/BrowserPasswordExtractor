@@ -1,5 +1,5 @@
 # BrowserPasswordExtractor
-Virus for extracting saved passwords from browsers like chrome, chromium, brave...
+Virus for extracting saved passwords from chromium based browsers 
 
 ## Usage
 
